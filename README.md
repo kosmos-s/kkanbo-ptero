@@ -2,6 +2,8 @@
 
 > Pterodactyl에서 운영 중인 게임 서버의 현재 상태를 Discord 접속자에게 간단하게 보여주기 위해 만든 상태 현황판 봇입니다.
 
+<img src="./images/server-status-v2.png" alt="Discord Server Status 결과 화면" width="452">
+
 ## 프로젝트 결과
 
 `깐보's Ptero`는 관리자가 서버를 제어하기 위한 도구보다, **Discord에 들어온 사용자가 어떤 게임 서버가 현재 열려 있는지 바로 확인할 수 있는 현황판**을 목표로 제작했습니다.
@@ -108,6 +110,8 @@ kkanbo-ptero/
 ├─ .gitignore
 ├─ install.sh / install.bat
 ├─ start.sh / start.bat
+├─ images/
+│  └─ server-status-v2.png
 ├─ src/
 │  ├─ index.js
 │  ├─ pterodactyl.js
