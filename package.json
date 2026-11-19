@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
+    "test": "node --test tests/*.test.js",
     "check": "node --check src/index.js && node --check src/pterodactyl.js && node --check src/statusBoard.js"
   },
   "engines": {
