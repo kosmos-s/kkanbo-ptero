@@ -26,12 +26,10 @@ class PterodactylClient {
       signal: AbortSignal.timeout(10000)
     });
     if (!response.ok) {
-      let detail = '';
-      try {
-        const body = await response.json();
-        detail = body?.errors?.[0]?.detail || body?.message || '';
-      } catch (_) {}
-      throw new PterodactylApiError(`Pterodactyl API ${response.status}${detail ? `: ${detail}` : ''}`, response.status);
+      // Upstream diagnostics may contain private panel details. This error is
+      // displayed on the public Discord board, so retain only the HTTP status.
+      await response.body?.cancel();
+      throw new PterodactylApiError(`Pterodactyl API ${response.status}`, response.status);
     }
     return response.json();
   }
